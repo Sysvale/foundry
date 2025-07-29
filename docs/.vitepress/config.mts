@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	title: 'Foundry',
 	description: 'A forge for composables, helpers, and front-end utilities.',
-	base: '/foundry/',
+	base: '/',
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
