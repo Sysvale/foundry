@@ -1,9 +1,9 @@
 ---
-name: "🐞 Bug"
+name: '🐞 Bug'
 about: Aponte um problema e ajude a evoluir o Foundry
-title: ""
-labels: "type:Bug"
-assignees: ""
+title: ''
+labels: 'type:Bug'
+assignees: ''
 ---
 
 Encontrou um bug? Por favor, preencha as seções abaixo. 👍

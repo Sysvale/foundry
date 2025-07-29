@@ -1,4 +1,4 @@
-name: "Publisher 📦"
+name: 'Publisher 📦'
 on:
   push:
     branches:
