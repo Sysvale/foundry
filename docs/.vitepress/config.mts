@@ -4,6 +4,7 @@ export default defineConfig({
 	title: 'Foundry',
 	description: 'A forge for composables, helpers, and front-end utilities.',
 	base: '/',
+	ignoreDeadLinks: true,
 	themeConfig: {
 		socialLinks: [
 			{ icon: 'github', link: 'https://github.com/Sysvale/foundry' },
