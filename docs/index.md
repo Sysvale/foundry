@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "Foundry"
-  text: "A forge for composables, helpers, and front-end utilities."
+  name: 'Foundry'
+  text: 'A forge for composables, helpers, and front-end utilities.'
   tagline: My great project tagline
   actions:
     - theme: brand
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

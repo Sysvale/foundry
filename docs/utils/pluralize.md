@@ -10,7 +10,7 @@ Pluraliza uma palavra em português com base em regras gramaticais e irregularid
 
 #### Parâmetros
 
-- `count` (number | string | null, opcional): 
+- `count` (number | string | null, opcional):
   - Se número: determina se o plural deve ser aplicado (valores absolutos < 2 mantêm o singular)
   - Se string: será usado como `word` e o count será considerado null
   - Padrão: `null` (assume plural)
@@ -41,8 +41,9 @@ Pluraliza uma palavra em português com base em regras gramaticais e irregularid
 #### Exemplos
 
 ```typescript
-pluralize(1, 'pão')       // 'pão'
-pluralize(2, 'pão')        // 'pães' (irregular)
-pluralize(5, 'animal')     // 'animais'
-pluralize(3, 'funil')      // 'funis'
-pluralize(10, 'carro')     // 'carros'
+pluralize(1, 'pão'); // 'pão'
+pluralize(2, 'pão'); // 'pães' (irregular)
+pluralize(5, 'animal'); // 'animais'
+pluralize(3, 'funil'); // 'funis'
+pluralize(10, 'carro'); // 'carros'
+```

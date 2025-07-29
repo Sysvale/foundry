@@ -8,7 +8,7 @@ const irregulars: Record<string, string> = {
 	alemão: 'alemães',
 	mal: 'males',
 	órgão: 'órgãos',
-	nível: 'níveis'
+	nível: 'níveis',
 };
 
 export function pluralize(
@@ -17,11 +17,10 @@ export function pluralize(
 	customPlural: string = '',
 	customIrregulars: Record<string, string> = {}
 ): string {
-
 	let innerIrregulars = {
 		...irregulars,
-		...customIrregulars
-	}
+		...customIrregulars,
+	};
 
 	if (typeof count === 'string') {
 		word = count;
@@ -52,10 +51,10 @@ export function pluralize(
 	if (word.endsWith('r') || word.endsWith('z')) return word + 'es';
 
 	// -ol → -óis
-	if (word.endsWith('ol'))  return word.slice(0, -2) + 'óis';
+	if (word.endsWith('ol')) return word.slice(0, -2) + 'óis';
 
 	// -al, -ul → -ais, -uis
-	if (/[au]l$/.test(word))  return word.slice(0, -1) + 'is';
+	if (/[au]l$/.test(word)) return word.slice(0, -1) + 'is';
 
 	// -el → -éis
 	if (word.endsWith('el')) return word.slice(0, -2) + 'éis';
@@ -70,7 +69,9 @@ export function pluralize(
 	return word;
 }
 
-export function pluralizeWithCount(...args: Parameters<typeof pluralize>): string {
+export function pluralizeWithCount(
+	...args: Parameters<typeof pluralize>
+): string {
 	const [count] = args;
 	return `${count} ${pluralize(...args)}`;
 }
@@ -81,7 +82,14 @@ export function pluralizeWords(
 	customPlural: string[] | string = '',
 	customIrregulars: Record<string, string> = {}
 ): string {
-	let pluralizedWords = words.map((word, index) => pluralize(count, word, customPlural[index] ?? customPlural, customIrregulars));
+	let pluralizedWords = words.map((word, index) =>
+		pluralize(
+			count,
+			word,
+			customPlural[index] ?? customPlural,
+			customIrregulars
+		)
+	);
 
 	return `${pluralizedWords.join(' ')}`;
 }

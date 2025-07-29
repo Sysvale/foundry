@@ -1,5 +1,9 @@
 import { describe, test, expect } from 'vitest';
-import { pluralize, pluralizeWords, pluralizeWithCount } from '../src/utils/pluralize'; // Adjust the path
+import {
+	pluralize,
+	pluralizeWords,
+	pluralizeWithCount,
+} from '../src/utils/pluralize'; // Adjust the path
 
 describe('pluralize()', () => {
 	test('returns same word if count is 1', () => {
@@ -32,8 +36,10 @@ describe('pluralize()', () => {
 	test('convert custom irregulars properly', () => {
 		expect(pluralize(2, 'órgão')).toBe('órgãos');
 		expect(pluralize(2, 'cônsul')).not.toBe('cônsules');
-		expect(pluralize(2, 'cônsul', undefined, { cônsul: 'cônsules'})).toBe('cônsules');
-		expect(pluralize(2, 'maçã', undefined, { maçã: 'maçãs'})).toBe('maçãs');
+		expect(pluralize(2, 'cônsul', undefined, { cônsul: 'cônsules' })).toBe(
+			'cônsules'
+		);
+		expect(pluralize(2, 'maçã', undefined, { maçã: 'maçãs' })).toBe('maçãs');
 	});
 
 	test('converts -m to -ns', () => {
@@ -104,12 +110,24 @@ describe('pluralizeWords()', () => {
 	});
 
 	test('works with three words', () => {
-		expect(pluralizeWords(0, ['moto', 'branca', 'escolhida'])).toBe('moto branca escolhida');
-		expect(pluralizeWords(1, ['moto', 'branca', 'escolhida'])).toBe('moto branca escolhida');
-		expect(pluralizeWords(2, ['moto', 'branca', 'escolhida'])).toBe('motos brancas escolhidas');
+		expect(pluralizeWords(0, ['moto', 'branca', 'escolhida'])).toBe(
+			'moto branca escolhida'
+		);
+		expect(pluralizeWords(1, ['moto', 'branca', 'escolhida'])).toBe(
+			'moto branca escolhida'
+		);
+		expect(pluralizeWords(2, ['moto', 'branca', 'escolhida'])).toBe(
+			'motos brancas escolhidas'
+		);
 	});
 
 	test('works with custom plurals', () => {
-		expect(pluralizeWords(2, ['o', 'avião', 'velho'], ['os', 'aviõezinhos', 'velhos'])).toBe('os aviõezinhos velhos');
+		expect(
+			pluralizeWords(
+				2,
+				['o', 'avião', 'velho'],
+				['os', 'aviõezinhos', 'velhos']
+			)
+		).toBe('os aviõezinhos velhos');
 	});
 });

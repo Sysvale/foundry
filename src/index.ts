@@ -1,2 +1,1 @@
-export * from './utils/pluralize'
-// export * from './composables/useExample'
+export * from './utils/pluralize';
