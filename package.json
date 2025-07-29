@@ -1,0 +1,55 @@
+{
+  "name": "@sysvale/foundry",
+  "version": "1.0.0",
+  "description": "A forge for composables, helpers, and front-end utilities.",
+  "type": "module",
+  "main": "./dist/foundry.cjs.js",
+  "module": "./dist/foundry.es.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+  	"access": "public"
+	},
+  "exports": {
+	".": {
+	  "import": "./dist/foundry.es.js",
+	  "require": "./dist/foundry.cjs.js"
+	}
+  },
+  "files": ["dist"],
+  "scripts": {
+	"dev": "vite",
+	"build": "vite build",
+	"test": "vitest run",
+	"test:watch": "vitest",
+	"test:ui": "vitest --ui",
+	"docs:dev": "vitepress dev docs",
+	"docs:build": "vitepress build docs",
+	"docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git+https://github.com/Sysvale/foundry.git"
+  },
+  "keywords": [],
+  "author": "Sysvale <contato@sysvale.com.br>",
+  "license": "Apache-2.0",
+  "bugs": {
+	"url": "https://github.com/Sysvale/foundry/issues"
+  },
+  "homepage": "https://github.com/Sysvale/foundry#readme",
+  "devDependencies": {
+	"@types/node": "^24.1.0",
+	"@vitejs/plugin-vue": "^6.0.1",
+	"@vitest/ui": "^3.2.4",
+	"@vue/test-utils": "^2.4.6",
+	"jsdom": "^26.1.0",
+	"typescript": "^5.8.3",
+	"vite": "^7.0.6",
+	"vitepress": "^1.6.3",
+	"vitest": "^3.2.4",
+	"vue": "^3.5.18"
+  },
+  "peerDependencies": {
+	"vue": "^3.5.0"
+  }
+}

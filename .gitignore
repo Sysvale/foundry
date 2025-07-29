@@ -1,0 +1,33 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+dist/
+.vitepress/dist/
+.vite/
+
+# VitePress
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+
+# Vitest
+coverage/
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# IDEs
+.vscode/
+.idea/
+*.sw?
+*.sublime-*
+
+# Optional: output folders
+build/
+lib/
+types/
