@@ -28,6 +28,7 @@
 		"docs:build": "vitepress build docs",
 		"docs:preview": "vitepress preview docs",
 		"lint": "eslint . --ext .ts,.tsx,.js,.vue",
+		"prettier:check": "prettier . --check",
 		"format": "prettier --write ."
 	},
 	"repository": {
