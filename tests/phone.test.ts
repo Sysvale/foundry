@@ -16,8 +16,8 @@ describe('maskPhone', () => {
 
 	test('deve retornar string vazia quando o telefone é nulo/undefined', () => {
 		// prettier-ignore
-		expect(maskPhone(null as any)).toBe('');
-		expect(maskPhone(undefined as any)).toBe('');
+		expect(maskPhone(null)).toBe('');
+		expect(maskPhone(undefined)).toBe('');
 	});
 
 	test('deve retornar apenas dígitos quando o telefone tem comprimento inválido', () => {
@@ -57,9 +57,8 @@ describe('removePhoneMask', () => {
 	});
 
 	test('deve retornar string vazia quando o telefone é nulo/undefined', () => {
-		// prettier-ignore
-		expect(removePhoneMask(null as any)).toBe('');
-		expect(removePhoneMask(undefined as any)).toBe('');
+		expect(removePhoneMask(null)).toBe('');
+		expect(removePhoneMask(undefined)).toBe('');
 	});
 
 	test('deve retornar valor como está quando o telefone não tem máscara', () => {

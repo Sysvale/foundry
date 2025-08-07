@@ -1,4 +1,4 @@
-const maskPhone = (value: string) => {
+const maskPhone = (value: string | null | undefined) => {
 	if (!value || value.length === 0) {
 		return '';
 	}
@@ -15,7 +15,7 @@ const maskPhone = (value: string) => {
 	return phone;
 };
 
-const removePhoneMask = (value: string) => {
+const removePhoneMask = (value: string | null | undefined) => {
 	if (!value || value.length === 0) {
 		return '';
 	}
