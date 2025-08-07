@@ -30,6 +30,7 @@ maskPhone(value: string): string
 
 #### Exemplos
 
+<!-- prettier-ignore -->
 ```typescript
 maskPhone('11987654321');      // → '(11) 98765-4321'
 maskPhone('1187654321');       // → '(11) 8765-4321'
@@ -69,6 +70,7 @@ removePhoneMask(value: string): string
 
 #### Exemplos
 
+<!-- prettier-ignore -->
 ```typescript
 removePhoneMask('(11) 98765-4321');      // → '11987654321'
 removePhoneMask('(11) 8765-4321');       // → '1187654321'
