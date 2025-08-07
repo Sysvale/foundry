@@ -15,9 +15,8 @@ describe('maskPhone', () => {
 	});
 
 	test('deve retornar string vazia quando o telefone é nulo/undefined', () => {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		// prettier-ignore
 		expect(maskPhone(null as any)).toBe('');
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		expect(maskPhone(undefined as any)).toBe('');
 	});
 
@@ -58,9 +57,8 @@ describe('removePhoneMask', () => {
 	});
 
 	test('deve retornar string vazia quando o telefone é nulo/undefined', () => {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		// prettier-ignore
 		expect(removePhoneMask(null as any)).toBe('');
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		expect(removePhoneMask(undefined as any)).toBe('');
 	});
 
