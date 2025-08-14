@@ -46,7 +46,6 @@ maskPhone('1');                // → '1'
 
 - Exibir telefones formatados em formulários e relatórios.
 - Garantir consistência visual de números de telefone em interfaces de usuário.
-- Aceitar entradas com ou sem máscara, letras ou caracteres especiais.
 
 ---
 
