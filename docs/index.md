@@ -8,8 +8,11 @@ hero:
 
 features:
   - title: Utils
-    details: Métodos utilitários em TypesCript para facilitar tarefas comuns no front-end.
+    details: Métodos utilitários em TypeScript para facilitar tarefas comuns no front-end.
     link: /utils/pluralize
+  - title: Formatadores
+    details: Métodos em TypeScript para formatar diversos tipos de dados.
+    link: /formatters/index
   - title: Composables
     details: Composables Vue 3 reutilizáveis para lógica comum no front-end.
     link: /composables/
