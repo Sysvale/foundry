@@ -27,11 +27,13 @@ commaline(arr: string[]): string
 #### Parâmetros
 
 **Assinatura 1:**
+
 - **`str`** (`string`): A string atual sendo processada
 - **`index`** (`number`): O índice da string atual na lista
 - **`length`** (`number`): O comprimento total da lista
 
 **Assinatura 2 (sobrecarga):**
+
 - **`arr`** (`string[]`): Array de strings a ser formatado
 
 <br />
@@ -68,7 +70,7 @@ commaline(['manga', 'morango', 'uva']); // → 'manga, morango e uva'
 commaline(['manga', 'morango', 'uva', 'abacate']); // → 'manga, morango, uva e abacate'
 
 // Lista com muitos itens
-commaline(['maçã', 'banana', 'laranja', 'pêra', 'kiwi', 'mamão']); 
+commaline(['maçã', 'banana', 'laranja', 'pêra', 'kiwi', 'mamão']);
 // → 'maçã, banana, laranja, pêra, kiwi e mamão'
 ```
 
@@ -101,7 +103,7 @@ A função lança um erro quando os parâmetros obrigatórios não são fornecid
 
 ```typescript
 // ❌ Erro: faltam parâmetros obrigatórios
-commaline('Abacate'); 
+commaline('Abacate');
 // → Error: 'Index and length must be provided when passing a string'
 
 // ✅ Correto
