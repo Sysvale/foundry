@@ -16,7 +16,7 @@ describe('commaline com strings', () => {
 		expect(listWithCommas).toBe('manga, morango, uva e abacate');
 	});
 
-	test('se um erro é emitido quando os parâmetros index e lengh não são enviados', () => {
+	test('se um erro é emitido quando os parâmetros index e length não são enviados', () => {
 		expect(() => commaline('Abacate')).toThrow(
 			'Index and length must be provided when passing a string'
 		);
