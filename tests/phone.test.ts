@@ -4,10 +4,12 @@ import { maskPhone, removePhoneMask } from '../src/formatters/phone';
 describe('maskPhone', () => {
 	test('deve formatar número de telefone com 11 dígitos (com 9)', () => {
 		expect(maskPhone('11987654321')).toBe('(11) 98765-4321');
+		expect(maskPhone(11987654321)).toBe('(11) 98765-4321');
 	});
 
 	test('deve formatar número de telefone com 10 dígitos (sem 9)', () => {
 		expect(maskPhone('1187654321')).toBe('(11) 8765-4321');
+		expect(maskPhone(1187654321)).toBe('(11) 8765-4321');
 	});
 
 	test('deve retornar string vazia quando o telefone é vazio', () => {
@@ -15,7 +17,6 @@ describe('maskPhone', () => {
 	});
 
 	test('deve retornar string vazia quando o telefone é nulo/undefined', () => {
-		// prettier-ignore
 		expect(maskPhone(null)).toBe('');
 		expect(maskPhone(undefined)).toBe('');
 	});
