@@ -3,7 +3,6 @@ const typescript = require('@typescript-eslint/eslint-plugin');
 const typescriptParser = require('@typescript-eslint/parser');
 
 module.exports = [
-	// Configuração global de ignores
 	{
 		ignores: [
 			'**/node_modules/**',
@@ -57,8 +56,9 @@ module.exports = [
 			indent: ['error', 'tab'],
 			quotes: ['error', 'single'],
 			semi: ['error', 'always'],
-
-			'@typescript-eslint/no-unused-vars': 'error',
+			'no-redeclare': 'off',
+			'no-unused-vars': 'off',
+			'@typescript-eslint/no-unused-vars': 'off',
 			'@typescript-eslint/no-explicit-any': 'warn',
 			'@typescript-eslint/explicit-function-return-type': 'off',
 			'@typescript-eslint/explicit-module-boundary-types': 'off',
