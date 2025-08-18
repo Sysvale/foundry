@@ -9,7 +9,7 @@ hero:
 features:
   - title: Utils
     details: Métodos utilitários em TypeScript para facilitar tarefas comuns no front-end.
-    link: /utils/pluralize
+    link: /utils/index
   - title: Formatadores
     details: Métodos em TypeScript para formatar diversos tipos de dados.
     link: /formatters/index
