@@ -31,7 +31,7 @@ describe('commaline com array de strings', () => {
 	});
 
 	test('se a conjunção "e" é utilizada quando há 2 ou mais items na lista', () => {
-		expect(commaline(['manga', 'morango', 'uva de mesa', 'abacate'])).toBe('manga, morango, uva e abacate');
+		expect(commaline(['manga', 'morango', 'uva', 'abacate'])).toBe('manga, morango, uva e abacate');
 	});
 
 	test('se é retornado string vazia quando uma string vazia é enviada', () => {
