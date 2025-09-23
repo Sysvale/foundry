@@ -39,11 +39,12 @@ module.exports = [
 		},
 	},
 	{
-		files: [
-			'src/**/*.{ts,tsx}',
-			'lib/**/*.{ts,tsx}',
-			'components/**/*.{ts,tsx}',
-		],
+	files: [
+		'src/**/*.{ts,tsx}',
+		'lib/**/*.{ts,tsx}',
+		'components/**/*.{ts,tsx}',
+		'tests/**/*.{ts,tsx}',
+	],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',

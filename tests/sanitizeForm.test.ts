@@ -147,11 +147,11 @@ describe('sanitizeForm() - sanitizadores customizados', () => {
 		const sanitizers = [
 			{
 				field: 'name',
-				sanitizer: (value) => value.toUpperCase(),
+				sanitizer: (value: string) => value.toUpperCase(),
 			},
 			{
 				field: 'phone',
-				sanitizer: (value) => value.replace(/\D/g, ''),
+				sanitizer: (value: string) => value.replace(/\D/g, ''),
 			},
 		];
 
@@ -171,7 +171,7 @@ describe('sanitizeForm() - sanitizadores customizados', () => {
 		const sanitizers = [
 			{
 				field: 'title',
-				sanitizer: (value) => value.toUpperCase(),
+				sanitizer: (value: string) => value.toUpperCase(),
 			},
 		];
 
@@ -191,7 +191,7 @@ describe('sanitizeForm() - sanitizadores customizados', () => {
 		const sanitizers = [
 			{
 				field: 'name',
-				sanitizer: (value) => value.toUpperCase(),
+				sanitizer: (value: string) => value.toUpperCase(),
 			},
 		];
 
