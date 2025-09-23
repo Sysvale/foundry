@@ -1,4 +1,11 @@
-type FormValue = string | number | boolean | null | undefined | FormObject | FormValue[];
+type FormValue =
+	| string
+	| number
+	| boolean
+	| null
+	| undefined
+	| FormObject
+	| FormValue[];
 
 type FormObject = {
 	id?: string | number;
@@ -13,12 +20,12 @@ export interface SanitizableField {
 }
 
 /**
-* Sanitiza dados de formulário removendo campos desnecessários e aplicando transformações.
-* 
-* @param { Object } values
-* @param { Object[{ field: 'name', sanitizer: () => {} }] } sanitizableFields
-* @returns { Object }
-*/
+ * Sanitiza dados de formulário removendo campos desnecessários e aplicando transformações.
+ *
+ * @param { Object } values
+ * @param { Object[{ field: 'name', sanitizer: () => {} }] } sanitizableFields
+ * @returns { Object }
+ */
 export function sanitizeForm(
 	values: Record<string, FormValue>,
 	sanitizableFields?: SanitizableField[]
@@ -31,7 +38,7 @@ export function sanitizeForm(
 		if (value == null) return value;
 
 		if (Array.isArray(value)) {
-			return value.map((item) => sanitizeValue(item));
+			return value.map(item => sanitizeValue(item));
 		}
 
 		if (typeof value === 'object' && value !== null) {
@@ -51,6 +58,9 @@ export function sanitizeForm(
 	};
 
 	return Object.fromEntries(
-		Object.entries(values).map(([key, value]) => [key, sanitizeValue(value, key)])
+		Object.entries(values).map(([key, value]) => [
+			key,
+			sanitizeValue(value, key),
+		])
 	);
 }

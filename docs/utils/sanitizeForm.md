@@ -2,7 +2,6 @@
 
 Utilitário para sanitizar dados de formulário antes de enviá-los ao backend.
 
-
 ## Instalação e Importação
 
 ```typescript
@@ -14,6 +13,7 @@ import { sanitizeForm } from '@sysvale/foundry';
 ### `sanitizeForm()`
 
 Sanitiza dados de formulário
+
 - Extrai IDs de objetos do tipo `{ id: string | number, value: string }`
 - Mantém valores primitivos inalterados
 - Processa recursivamente campos aninhados
@@ -36,7 +36,14 @@ sanitizeForm(
 #### Tipos
 
 ```typescript
-type FormValue = string | number | boolean | null | undefined | FormObject | FormValue[];
+type FormValue =
+	| string
+	| number
+	| boolean
+	| null
+	| undefined
+	| FormObject
+	| FormValue[];
 
 type FormObject = {
 	id?: string | number;
@@ -70,18 +77,17 @@ interface SanitizableField {
 ```typescript
 // Objeto com ID é substituído pelo ID
 sanitizeForm({
-	category: { id: 'cat-123', name: 'Categoria A' }
+	category: { id: 'cat-123', name: 'Categoria A' },
 });
 // → { category: 'cat-123' }
-
 
 // Array de objetos com IDs
 sanitizeForm({
 	users: [
 		{ id: 1, name: 'João' },
 		{ id: 2, name: 'Maria' },
-		{ id: 3, name: 'Pedro' }
-	]
+		{ id: 3, name: 'Pedro' },
+	],
 });
 // → { users: [1, 2, 3] }
 ```
@@ -97,9 +103,9 @@ sanitizeForm({
 		theme: 'dark',
 		notifications: {
 			email: true,
-			push: false
-		}
-	}
+			push: false,
+		},
+	},
 });
 // → { config: { theme: 'dark', notifications: { email: true, push: false } } }
 
@@ -108,8 +114,8 @@ sanitizeForm({
 	user: { id: 1, name: 'João' },
 	preferences: {
 		theme: 'dark',
-		language: { id: 'pt-BR', name: 'Português' }
-	}
+		language: { id: 'pt-BR', name: 'Português' },
+	},
 });
 // → { user: 1, preferences: { theme: 'dark', language: 'pt-BR' } }
 ```
@@ -126,14 +132,14 @@ sanitizeForm({
 			id: 1,
 			items: [
 				{ id: 10, name: 'Item A' },
-				{ id: 11, name: 'Item B' }
-			]
+				{ id: 11, name: 'Item B' },
+			],
 		},
 		{
 			id: 2,
-			items: [{ id: 20, name: 'Item C' }]
-		}
-	]
+			items: [{ id: 20, name: 'Item C' }],
+		},
+	],
 });
 // → { categories: [1, 2] }
 
@@ -146,11 +152,11 @@ sanitizeForm({
 				id: 200,
 				employees: [
 					{ id: 300, name: 'João' },
-					{ id: 301, name: 'Maria' }
-				]
-			}
-		]
-	}
+					{ id: 301, name: 'Maria' },
+				],
+			},
+		],
+	},
 });
 // → { company: 100 }
 ```
@@ -164,19 +170,22 @@ sanitizeForm({
 const sanitizers = [
 	{
 		field: 'name',
-		sanitizer: (value) => value.toUpperCase()
+		sanitizer: value => value.toUpperCase(),
 	},
 	{
 		field: 'phone',
-		sanitizer: (value) => value.replace(/\D/g, '')
-	}
+		sanitizer: value => value.replace(/\D/g, ''),
+	},
 ];
 
-sanitizeForm({
-	name: 'joão',
-	phone: '(11) 99999-9999',
-	age: 25
-}, sanitizers);
+sanitizeForm(
+	{
+		name: 'joão',
+		phone: '(11) 99999-9999',
+		age: 25,
+	},
+	sanitizers
+);
 // → { name: 'JOÃO', phone: '11999999999', age: 25 }
 ```
 

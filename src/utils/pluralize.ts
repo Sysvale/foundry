@@ -16,13 +16,13 @@ const irregulars: Record<string, string> = {
 
 /**
  * Pluraliza uma palavra em português seguindo as regras gramaticais.
- * 
+ *
  * @param count - Quantidade (0-1 = singular, >=2 = plural). Se string, trata como palavra. Null/undefined = 2.
  * @param word - Palavra a ser pluralizada
  * @param customPlural - Plural personalizado (opcional)
  * @param customIrregulars - Plurais irregulares personalizados (opcional)
  * @returns Palavra pluralizada conforme a quantidade
- * 
+ *
  * @example
  * pluralize(1, 'carro'); // → 'carro'
  * pluralize(2, 'carro'); // → 'carros'
@@ -90,10 +90,10 @@ export function pluralize(
 
 /**
  * Retorna a palavra pluralizada precedida pela quantidade.
- * 
+ *
  * @param args - Mesmos parâmetros da função `pluralize`
  * @returns Quantidade + palavra pluralizada
- * 
+ *
  * @example
  * pluralizeWithCount(1, 'carro'); // → '1 carro'
  * pluralizeWithCount(3, 'avião'); // → '3 aviões'
@@ -107,13 +107,13 @@ export function pluralizeWithCount(
 
 /**
  * Pluraliza múltiplas palavras simultaneamente.
- * 
+ *
  * @param count - Quantidade para determinar pluralização
  * @param words - Array de palavras
  * @param customPlural - Array de plurais personalizados ou string única (opcional)
  * @param customIrregulars - Plurais irregulares personalizados (opcional)
  * @returns Palavras pluralizadas separadas por espaço
- * 
+ *
  * @example
  * pluralizeWords(1, ['avião', 'antigo']); // → 'avião antigo'
  * pluralizeWords(2, ['avião', 'antigo']); // → 'aviões antigos'
