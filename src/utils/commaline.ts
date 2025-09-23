@@ -1,6 +1,14 @@
 export function commaline(str: string, index: number, length: number): string;
 export function commaline(arr: string[]): string;
 
+/**
+ * Função para formatar listas de strings com vírgulas e conjunção "e".
+ *
+ * @param strOrArray - String ou array de strings
+ * @param index - Índice (obrigatório se strOrArray for string)
+ * @param length - Tamanho total (obrigatório se strOrArray for string)
+ * @returns String formatada
+ */
 export function commaline(
 	strOrArray: string | string[],
 	index?: number,

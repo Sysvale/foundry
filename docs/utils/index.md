@@ -1,9 +1,5 @@
 # Funções utilitárias
 
-Este módulo fornece funções para formatar diversos tipos de dados.
-
-## Formatadores
-
 ### pluralize()
 
 Funções para aplicação de plurais em palavras ou lista de palavras.
@@ -12,6 +8,12 @@ Funções para aplicação de plurais em palavras ou lista de palavras.
 
 ### commaline()
 
-Funções para formatar listas de strings com vírgulas e conjunção "e".
+Função para formatar listas de strings com vírgulas e conjunção "e".
 
 - [Documentação](./commaline.md)
+
+### sanitizeForm()
+
+Função para sanitizar dados de formulário e aplicar transformações antes de enviá-los ao backend.
+
+- [Documentação](./sanitizeForm.md)

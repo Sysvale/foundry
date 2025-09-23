@@ -1,6 +1,6 @@
 {
 	"name": "@sysvale/foundry",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "A forge for composables, helpers, and front-end utilities.",
 	"type": "module",
 	"main": "./dist/foundry.cjs.js",

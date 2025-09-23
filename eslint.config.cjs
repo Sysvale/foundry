@@ -43,6 +43,7 @@ module.exports = [
 			'src/**/*.{ts,tsx}',
 			'lib/**/*.{ts,tsx}',
 			'components/**/*.{ts,tsx}',
+			'tests/**/*.{ts,tsx}',
 		],
 		languageOptions: {
 			ecmaVersion: 'latest',
