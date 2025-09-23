@@ -1,3 +1,6 @@
+/**
+ * Mapeamento de palavras com plurais irregulares em português.
+ */
 const irregulars: Record<string, string> = {
 	pão: 'pães',
 	mão: 'mãos',
@@ -11,6 +14,22 @@ const irregulars: Record<string, string> = {
 	nível: 'níveis',
 };
 
+/**
+ * Pluraliza uma palavra em português seguindo as regras gramaticais.
+ * 
+ * @param count - Quantidade (0-1 = singular, >=2 = plural). Se string, trata como palavra. Null/undefined = 2.
+ * @param word - Palavra a ser pluralizada
+ * @param customPlural - Plural personalizado (opcional)
+ * @param customIrregulars - Plurais irregulares personalizados (opcional)
+ * @returns Palavra pluralizada conforme a quantidade
+ * 
+ * @example
+ * pluralize(1, 'carro'); // → 'carro'
+ * pluralize(2, 'carro'); // → 'carros'
+ * pluralize(2, 'pão'); // → 'pães' (irregular)
+ * pluralize(2, 'livro', 'livrinhos'); // → 'livrinhos'
+ * pluralize('casa'); // → 'casas'
+ */
 export function pluralize(
 	count: number | string | null = null,
 	word: string,
@@ -69,6 +88,16 @@ export function pluralize(
 	return word;
 }
 
+/**
+ * Retorna a palavra pluralizada precedida pela quantidade.
+ * 
+ * @param args - Mesmos parâmetros da função `pluralize`
+ * @returns Quantidade + palavra pluralizada
+ * 
+ * @example
+ * pluralizeWithCount(1, 'carro'); // → '1 carro'
+ * pluralizeWithCount(3, 'avião'); // → '3 aviões'
+ */
 export function pluralizeWithCount(
 	...args: Parameters<typeof pluralize>
 ): string {
@@ -76,6 +105,20 @@ export function pluralizeWithCount(
 	return `${count} ${pluralize(...args)}`;
 }
 
+/**
+ * Pluraliza múltiplas palavras simultaneamente.
+ * 
+ * @param count - Quantidade para determinar pluralização
+ * @param words - Array de palavras
+ * @param customPlural - Array de plurais personalizados ou string única (opcional)
+ * @param customIrregulars - Plurais irregulares personalizados (opcional)
+ * @returns Palavras pluralizadas separadas por espaço
+ * 
+ * @example
+ * pluralizeWords(1, ['avião', 'antigo']); // → 'avião antigo'
+ * pluralizeWords(2, ['avião', 'antigo']); // → 'aviões antigos'
+ * pluralizeWords(2, ['o', 'avião'], ['os', 'aviõezinhos']); // → 'os aviõezinhos'
+ */
 export function pluralizeWords(
 	count: number | string | null,
 	words: string[],
