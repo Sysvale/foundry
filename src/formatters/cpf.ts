@@ -1,9 +1,11 @@
-const maskCpf = (value: string) => {
-	if (!value) {
+const maskCpf = (value: string | number) => {
+	let cpf = typeof value === 'number' ? value.toString() : value;
+
+	if (!cpf) {
 		return '';
 	}
 
-	const cpf = value.replace(/\D/g, '');
+	cpf = cpf.replace(/\D/g, '');
 
 	if (cpf.length === 11) {
 		return `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(6, 9)}-${cpf.substring(9, 11)}`;
@@ -12,12 +14,14 @@ const maskCpf = (value: string) => {
 	return cpf;
 };
 
-const removeCpfMask = (value: string) => {
-	if (!value) {
+const removeCpfMask = (value: string | number) => {
+	let cpf = typeof value === 'number' ? value.toString() : value;
+
+	if (!cpf) {
 		return '';
 	}
 
-	return value.replace(/\D/g, '');
+	return cpf.replace(/\D/g, '');
 };
 
 export { maskCpf, removeCpfMask };

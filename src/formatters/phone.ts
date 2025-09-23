@@ -1,9 +1,11 @@
-const maskPhone = (value: string | null | undefined) => {
-	if (!value || value.length === 0) {
+const maskPhone = (value: string | null | number | undefined) => {
+	let phone = typeof value === 'number' ? value.toString() : value;
+
+	if (!phone || phone.length === 0) {
 		return '';
 	}
 
-	const phone = value.replace(/[^0-9]+/g, '');
+	phone = phone.replace(/[^0-9]+/g, '');
 
 	if (phone.length === 11) {
 		return `(${phone.substring(0, 2)}) ${phone.substring(2, 7)}-${phone.substring(7, 11)}`;
@@ -15,12 +17,14 @@ const maskPhone = (value: string | null | undefined) => {
 	return phone;
 };
 
-const removePhoneMask = (value: string | null | undefined) => {
-	if (!value || value.length === 0) {
+const removePhoneMask = (value: string | null | number | undefined) => {
+	let phone = typeof value === 'number' ? value.toString() : value;
+
+	if (!phone || phone.length === 0) {
 		return '';
 	}
 
-	return value.replace(/\(|\)|-|\s/g, '');
+	return phone.replace(/\(|\)|-|\s/g, '');
 };
 
 export { maskPhone, removePhoneMask };

@@ -4,6 +4,7 @@ import { maskCpf, removeCpfMask } from '../src/formatters/cpf';
 describe('maskCpf', () => {
 	test('deve formatar cpf', () => {
 		expect(maskCpf('11111111111')).toBe('111.111.111-11');
+		expect(maskCpf(11111111111)).toBe('111.111.111-11');
 	});
 
 	test('deve retornar string vazia quando cpf é vazio', () => {
