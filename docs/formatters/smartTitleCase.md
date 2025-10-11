@@ -1,4 +1,4 @@
-# Utilitários de Formatação de TitleCase
+# Utilitários de Formatação do SmartTitleCase
 
 Este módulo fornece funções para normalizar e formatar textos, aplicando regras de capitalização inteligente em títulos, nomes próprios e frases, respeitando preposições, conjunções e exceções definidas.
 

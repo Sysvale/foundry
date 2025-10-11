@@ -16,7 +16,7 @@ Funções para aplicação ou remoção de máscaras em números telefônicos br
 
 - [Documentação](./phone.md)
 
-### TitleCase
+### SmartTitleCase
 
 Função para normalizar e formatar títulos, nomes próprios e frases.
 
