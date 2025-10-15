@@ -9,6 +9,8 @@ describe('smartTitleCase', () => {
 		expect(smartTitleCase('ash ketchum dA Silva')).toBe('Ash Ketchum da Silva');
 		expect(smartTitleCase('')).toBe('');
 
-		expect(smartTitleCase('ESTUDANTE DAS USP', ['USP', 'UNIVASF'])).toBe('Estudante das USP');
+		expect(smartTitleCase('ESTUDANTE DAS USP', ['USP', 'UNIVASF'])).toBe(
+			'Estudante das USP'
+		);
 	});
 });

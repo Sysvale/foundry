@@ -12,7 +12,7 @@ import { smartTitleCase } from '@sysvale/foundry';
 
 ### `smartTitleCase()`
 
-Formata uma string colocando a primeira letra de cada palavra em maiúsculo e o restante em minúsculo, exceto 
+Formata uma string colocando a primeira letra de cada palavra em maiúsculo e o restante em minúsculo, exceto
 preposições e palavras listadas como exceção.
 
 ### Sintaxe
