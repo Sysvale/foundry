@@ -67,6 +67,12 @@ git clone https://github.com/Sysvale/foundry
 npm i
 ```
 
+## Executando o Foundry
+
+```bash
+npm run docs:dev
+```
+
 A aplicação estará disponível na porta `5173`, em [http://localhost:5173/](http://localhost:5173/).
 
 ### Testando-o
