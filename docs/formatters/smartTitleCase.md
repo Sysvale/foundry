@@ -47,8 +47,3 @@ smartTitleCase('');                                 // → ''
 - Exibir nomes próprios corretamente capitalizados em formulários e relatórios.
 - Normalizar títulos, subtítulos e textos para interfaces de usuário.
 - Evitar capitalização incorreta de preposições, conjunções e siglas.
-
-### Limitações
-
-- Não valida nomes ou títulos, apenas aplica a capitalização correta.
-- Strings vazias retornam uma string vazia.
