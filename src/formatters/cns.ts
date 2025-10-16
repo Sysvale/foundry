@@ -12,7 +12,7 @@ function maskCns(value: string | number, emptyValueIndicator = '') {
 	}
 
 	return cns;
-};
+}
 
 function removeCnsMask(value: string) {
 	if (!value || !(typeof value === 'string') || value.length === 0) {
@@ -20,9 +20,6 @@ function removeCnsMask(value: string) {
 	}
 
 	return value.replace(/\s/g, '');
-};
+}
 
-export {
-	maskCns,
-	removeCnsMask,
-};
+export { maskCns, removeCnsMask };
