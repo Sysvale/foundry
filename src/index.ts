@@ -4,3 +4,4 @@ export * from './utils/sanitizeForm';
 export { maskCpf, removeCpfMask } from './formatters/cpf';
 export { maskCns, removeCnsMask } from './formatters/cns';
 export { maskPhone, removePhoneMask } from './formatters/phone';
+export { smartTitleCase } from './formatters/smartTitleCase';
