@@ -49,6 +49,9 @@ module.exports = [
 			ecmaVersion: 'latest',
 			sourceType: 'module',
 			parser: typescriptParser,
+			globals: {
+			...require('globals').browser,
+		},
 		},
 		plugins: {
 			'@typescript-eslint': typescript,
