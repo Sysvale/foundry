@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 function calcChecker1(firstNineDigits: string) {
 	let sum = 0;
 
@@ -28,7 +27,13 @@ function cleaner(value: string) {
 	return value.replace(/[^\d]/g, '');
 }
 
-export function cpfValidator(value: string) {
+/**
+ * Valida CPFs com e sem máscara.
+ *
+ * @param { string } value
+ * @returns { boolean }
+ */
+export function cpfValidator(value: string): boolean {
 	if (!value) {
 		return true;
 	}

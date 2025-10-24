@@ -17,3 +17,9 @@ Função para formatar listas de strings com vírgulas e conjunção "e".
 Função para sanitizar dados de formulário e aplicar transformações antes de enviá-los ao backend.
 
 - [Documentação](./sanitizeForm.md)
+
+### cpfValidator()
+
+Função para validar CPFs com e sem máscara.
+
+- [Documentação](./cpfValidator.md)
