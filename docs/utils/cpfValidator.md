@@ -63,7 +63,7 @@ A função lança um erro quando os parâmetros obrigatórios não são fornecid
 ```typescript
 // ❌ Erro: tipagem do parâmetro é inválida
 cpfValidator(71234567823);
-// → Error: Argument of type 'number' is not assignable to parameter of type 'string'.
+// → Error: O tipo do parâmetro passado é inválido.
 
 // ✅ Correto
 cpfValidator('71234567823'); // → false

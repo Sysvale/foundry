@@ -34,9 +34,14 @@ function cleaner(value: string) {
  * @returns { boolean }
  */
 export function cpfValidator(value: string): boolean {
+	if (typeof value !== 'string') {
+		throw new Error('O tipo do parâmetro passado é inválido.');
+	}
+
 	if (!value) {
 		return true;
 	}
+
 	const cleanCPF = cleaner(value);
 	const firstNineDigits = cleanCPF.substring(0, 9);
 	const checker = cleanCPF.substring(9, 11);

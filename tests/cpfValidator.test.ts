@@ -29,4 +29,8 @@ describe('cpfValidator()', () => {
 	test('retorna false quando cpf possui uma letra', () => {
 		expect(cpfValidator('25251251a09')).toBe(false);
 	});
+
+	test('lança erro quando parâmetro é do tipo number', () => {
+		expect(() => cpfValidator(12341789324)).toThrowError();
+	});
 });
