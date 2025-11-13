@@ -1,23 +1,23 @@
-function ValidaCNS_PROV(vlrCNS: string) {
+function checkCnsValue(value: string) {
 	let pis;
-	let resto;
-	let soma;
+	let rest;
+	let sum;
 
-	pis = vlrCNS.substring(0, 15);
+	pis = value.substring(0, 15);
 
 	if (pis === '') {
 		return false;
 	}
 
 	if (
-		vlrCNS.substring(0, 1) != '7' &&
-		vlrCNS.substring(0, 1) != '8' &&
-		vlrCNS.substring(0, 1) != '9'
+		value.substring(0, 1) !== '7' &&
+		value.substring(0, 1) !== '8' &&
+		value.substring(0, 1) !== '9'
 	) {
 		return false;
 	}
 
-	soma =
+	sum =
 		parseInt(pis.substring(0, 1), 10) * 15 +
 		parseInt(pis.substring(1, 2), 10) * 14 +
 		parseInt(pis.substring(2, 3), 10) * 13 +
@@ -34,29 +34,29 @@ function ValidaCNS_PROV(vlrCNS: string) {
 		parseInt(pis.substring(13, 14), 10) * 2 +
 		parseInt(pis.substring(14, 15), 10) * 1;
 
-	resto = soma % 11;
+	rest = sum % 11;
 
-	if (!resto) {
+	if (!rest) {
 		return true;
 	}
 
 	return false;
 }
 
-function validaCNS(vlrCNS: string) {
-	let soma = 0;
-	let resto = 0;
-	let dv = 0;
+function checkCnsFirstElevenDigits(value: string) {
+	let sum = 0;
+	let rest = 0;
+	let validatorDigit = 0;
 	let pis = '';
-	let resultado = '';
-	const tamCNS = vlrCNS.length;
+	let result = '';
+	const cnsSize = value.length;
 
-	if (tamCNS != 15) {
+	if (cnsSize !== 15) {
 		return false;
 	}
 
-	pis = vlrCNS.substring(0, 11);
-	soma =
+	pis = value.substring(0, 11);
+	sum =
 		Number(pis.substring(0, 1)) * 15 +
 		Number(pis.substring(1, 2)) * 14 +
 		Number(pis.substring(2, 3)) * 13 +
@@ -68,15 +68,15 @@ function validaCNS(vlrCNS: string) {
 		Number(pis.substring(8, 9)) * 7 +
 		Number(pis.substring(9, 10)) * 6 +
 		Number(pis.substring(10, 11)) * 5;
-	resto = soma % 11;
-	dv = 11 - resto;
+	rest = sum % 11;
+	validatorDigit = 11 - rest;
 
-	if (dv == 11) {
-		dv = 0;
+	if (validatorDigit === 11) {
+		validatorDigit = 0;
 	}
 
-	if (dv == 10) {
-		soma =
+	if (validatorDigit === 10) {
+		sum =
 			Number(pis.substring(0, 1)) * 15 +
 			Number(pis.substring(1, 2)) * 14 +
 			Number(pis.substring(2, 3)) * 13 +
@@ -89,14 +89,14 @@ function validaCNS(vlrCNS: string) {
 			Number(pis.substring(9, 10)) * 6 +
 			Number(pis.substring(10, 11)) * 5 +
 			2;
-		resto = soma % 11;
-		dv = 11 - resto;
-		resultado = `${pis}001${String(dv)}`;
+		rest = sum % 11;
+		validatorDigit = 11 - rest;
+		result = `${pis}001${String(validatorDigit)}`;
 	} else {
-		resultado = `${pis}000${String(dv)}`;
+		result = `${pis}000${String(validatorDigit)}`;
 	}
 
-	if (vlrCNS != resultado) {
+	if (value !== result) {
 		return false;
 	}
 
@@ -106,27 +106,23 @@ function validaCNS(vlrCNS: string) {
 /**
  * Valida CNS com e sem máscara.
  *
- * @param { string } vlrCNS
+ * @param { string } value
  * @returns { boolean }
  */
-export function cnsValidator(vlrCNS: string) {
-	if (typeof vlrCNS !== 'string') {
+export function cnsValidator(value: string) {
+	if (typeof value !== 'string') {
 		throw new Error('O tipo do parâmetro passado é inválido.');
 	}
 
-	if (!vlrCNS || !vlrCNS.length) {
-		return true;
-	}
+	const unmaskedValue = value.replace(/\D/g, '');
 
-	vlrCNS = vlrCNS.replace(/\D/g, '');
-
-	if (vlrCNS.length != 15) {
+	if (unmaskedValue.length !== 15) {
 		return false;
 	}
 
-	if ([1, 2].indexOf(parseInt(vlrCNS.substring(0, 1))) != -1) {
-		return validaCNS(vlrCNS);
+	if ([1, 2].indexOf(parseInt(unmaskedValue.substring(0, 1))) != -1) {
+		return checkCnsFirstElevenDigits(unmaskedValue);
 	}
 
-	return ValidaCNS_PROV(vlrCNS);
+	return checkCnsValue(unmaskedValue);
 }

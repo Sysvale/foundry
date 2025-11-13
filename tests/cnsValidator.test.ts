@@ -2,8 +2,8 @@ import { describe, expect, test } from 'vitest';
 import { cnsValidator } from '../src/utils/cnsValidator';
 
 describe('cnsValidator()', () => {
-	test('retorna true quando string vazia é passada', () => {
-		expect(cnsValidator('')).toBe(true);
+	test('retorna false quando string vazia é passada', () => {
+		expect(cnsValidator('')).toBe(false);
 	});
 
 	test('retorna false quando cns inválido com máscara é passado', () => {

@@ -17,14 +17,14 @@ Valida CNS com e sem máscara, indicando se os mesmos são válidos.
 #### Sintaxes
 
 ```typescript
-cnsValidator(vlrCNS: string): boolean
+cnsValidator(value: string): boolean
 ```
 
 #### Parâmetros
 
 **Assinatura 1:**
 
-- **`vlrCNS`** (`string`): CNS (com ou sem máscara) a ser validado
+- **`value`** (`string`): CNS (com ou sem máscara) a ser validado
 
 <br />
 
