@@ -23,3 +23,9 @@ Função para sanitizar dados de formulário e aplicar transformações antes de
 Função para validar CPFs com e sem máscara.
 
 - [Documentação](./cpfValidator.md)
+
+### cnsValidator()
+
+Função para validar CNS com e sem máscara.
+
+- [Documentação](./cnsValidator.md)
